@@ -9,6 +9,7 @@ void main(){
     pipe(fd);
     if (fork() != 0) { // parent
         write(fd[1], message, strlen (message) + 1) ;
+        printf("Send this to child %d \n",message);
     }
     else { //child
         read(fd[0], buf, 1024) ;
